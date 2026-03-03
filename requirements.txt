@@ -14,3 +14,4 @@ yfinance
 ddgs
 lxml
 langchain-tavily
+structlog
