@@ -29,12 +29,12 @@ class ResearchAnalystException(Exception):
         while last_tb and last_tb.tb_next:
             last_tb = last_tb.tb.next
 
-        self.file_name = last_tb.tb.frame.f_code.co_filename if last_tb else "<unknown>"
-        self.lineno = last_tb.tb.lineno if last_tb else -1
+        self.file_name = last_tb.tb_frame.f_code.co_filename if last_tb else "<unknown>"
+        self.lineno = last_tb.tb_lineno if last_tb else -1
         self.error_message = norm_arg
 
         if exc_type and exc_tb:
-            self.tracback_str = "".join(traceback.format_exception(exc_type, exc_value, exc_tb))
+            self.traceback_str = "".join(traceback.format_exception(exc_type, exc_value, exc_tb))
         else:
             self.traceback_str = ""
         
@@ -50,8 +50,8 @@ class ResearchAnalystException(Exception):
     def __repr__(self):
         return f"ResearcAnalystException(file={self.file_name|r}, line={self.lineno}, message = {self.error_message})"
     
-if __name__ =="__main__":
-    try:
-        a = 1/0
-    except Exception as e:
-        raise ResearchAnalystException("Division failed", e ) from e
+#if __name__ =="__main__":
+ #   try:
+  #      a = 1/0
+  #  except Exception as e:
+   #     raise ResearchAnalystException("Division failed", e ) from e

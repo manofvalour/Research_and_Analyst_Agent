@@ -15,4 +15,4 @@ ddgs
 lxml
 langchain-tavily
 structlog
-yaml
+pyyaml
