@@ -9,8 +9,6 @@ from research_and_analyst.logger.custom_logger import GLOBAL_LOGGER as log
 def _project_root()-> Path:
     """
     Determine the absolute path of the project root directory.
-    Example:
-        /Users/sunny/automated-research_report_generation/research_and_analyst
     """
 
     return Path(__file__).resolve().parents[1]

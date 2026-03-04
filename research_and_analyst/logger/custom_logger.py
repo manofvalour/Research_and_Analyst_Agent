@@ -1,15 +1,14 @@
 import os
 import logging
 from datetime import datetime
-
 import structlog
 
 
 class CustomLogger:
-    def __init__(self, log_dir: str = "logs") -> None:
+    def __init__(self, log_dir: str="logs") -> None:
         # Ensure log directory exists
-        self.logs_dir = os.path.join(os.getcwd(), log_dir)
-        os.makedirs(self.logs_dir, exist_ok=True)
+        self.logs_dir = os.path.join(os.getcwd(), log_dir) ## creating the log folder
+        os.makedirs(self.logs_dir, exist_ok=True) #creating the directory
 
         # Timestamped log file (for persistence)
         log_file = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
